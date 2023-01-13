@@ -117,6 +117,7 @@
 @media(max-width: 1850px) {
 
     .header {
+        gap: 5rem;
         .menu {
             display: flex;
             gap: 1rem;
@@ -125,10 +126,9 @@
     }
 }
 
-@media(max-width: 1400px) {
+@media(max-width: 1200px) {
 
     .header {
-
         .buttonMobile {
             display: flex;
         }

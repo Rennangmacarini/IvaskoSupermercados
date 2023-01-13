@@ -1,7 +1,17 @@
 
 import styles from "./styles.module.scss";
 
-export function ContentTwo() {
+
+type Post = {
+  id: string;
+  contentthree: string;
+};
+
+interface PostProps {
+  contentthree: Post[];
+}
+
+export function ContentThree({ contentthree }: PostProps) {
   return (
     <>
       <div className={styles.global}>
@@ -11,7 +21,11 @@ export function ContentTwo() {
         </div>
         <div className={styles.contentCard}>
           <div className={styles.contentImgOne}>
-            <img src="/images/mariano.png" alt="" />
+          {contentthree.map((post) => (
+            <div key={post.id}> 
+            <img src={post.contentthree} alt="" />
+            </div>
+            ))}
           </div>
           <div className={styles.contentText}>
             <p>

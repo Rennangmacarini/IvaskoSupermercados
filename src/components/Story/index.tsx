@@ -1,6 +1,20 @@
 import styles from "./styles.module.scss";
 
-export function Story() {
+type Posts = {
+  id: string;
+  one: string;
+  two: string;
+  three: string;
+  four: string;
+  five: string
+}
+
+interface PostProps{
+  story: Posts[]
+}
+
+
+export function Story({ story }: PostProps) {
   return (
     <>
       <div className={styles.title}>
@@ -20,15 +34,19 @@ export function Story() {
             que passou por muitas mudanças durante os anos.
           </p>
         </div>
-        <div>
-          <img src="/images/marianoOne.png" alt="" />
+        {story.map((post) => (
+        <div key={post.id}>
+          <img src={post.one} alt="" />
         </div>
+        ))}
       </div>
       
       <div className={styles.content}>
-        <div className={styles.imagem}>
-          <img src="/images/marianoTwo.png" alt="" />
+      {story.map((post) => (
+        <div key={post.id} className={styles.imagem}>
+          <img src={post.two}alt="" />
         </div>
+         ))}
         <div className={styles.text}>
         <h1>
             <span>|</span>Mariano e seu bar
@@ -48,15 +66,19 @@ export function Story() {
           A união da família sempre foi o alicerce de tudo. Na foto ao lado, vemos o Seu Mariano vendendo pêssegos, os quais ele mesmo plantava. E nessas idas e vindas, o Super Ivasko participou de festas da região, rodeios e diversos eventos. Em 1999, uma nova oportunidade aparece. Uma segunda loja, na mesma cidade. O Super Ivasko da rua Dezenove de Dezembro é inaugurada e passa a ser a sede da empresa, que nesse período ainda era muito pequena, contava com poucos funcionários e as tarefas ainda eram muito indefinidas.
           </p>
         </div>
-        <div>
-          <img src="/images/marianoThree.png" alt="" />
+        {story.map((post) => (
+        <div key={post.id}>
+          <img src={post.three} alt="" />
         </div>
+        ))}
       </div>
 
       <div className={styles.content}>
-        <div className={styles.imagem}>
-          <img src="/images/marianoFour.png" alt="" />
+      {story.map((post) => (
+        <div key={post.id} className={styles.imagem}>
+          <img  src={post.four} alt="" />
         </div>
+         ))}
         <div className={styles.text}>
         <h1>
             <span>|</span>Filhos
@@ -76,9 +98,11 @@ export function Story() {
           A expansão da marca para outras cidades se deu com o primeiro supermercado Ivasko aberto fora de Irati, em São Mateus do Sul, em 2019. Com o passar dos anos, o Super Ivasko tornou-se Grupo Ivasko diversificando o seu negócio, que hoje é formado por 29 portas abertas em 13 cidades, distribuídas em todo o Paraná, e conta com supermercados, atacados, postos de gasolina, distribuidoras de gás e a recém formada IvaskoTech, que engloba o ramo tecnológico do grupo, com dois aplicativos: Gymnamic e Gasss. O Grupo Ivasko surgiu com o seu Mariano e a família, e hoje está em transição para a terceira geração, empregando mais de 1.200 pessoas diretamente.
           </p>
         </div>
-        <div>
-          <img src="/images/marianoFive.png" alt="" />
+        {story.map((post) => (
+        <div key={post.id}>
+          <img src={post.five} alt="" />
         </div>
+        ))}
       </div>
     </>
   );
